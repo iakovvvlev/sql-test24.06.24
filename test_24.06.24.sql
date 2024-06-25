@@ -41,8 +41,15 @@ INSERT INTO Orders (OrderID, CustomerID, OrderDate, OrderSum) VALUES
 (10453, 'AROUT', '1997-02-21', 15000);
 
 -- Запрос для вывода названий всех компаний, не выполнивших заказ с 15.11.1996 по 18.02.1997
+/*
 SELECT c.CompanyName
 FROM Customers c
 LEFT JOIN Orders o ON c.CustomerID = o.CustomerID 
     AND o.OrderDate BETWEEN '1996-11-15' AND '1997-02-18'
 WHERE o.OrderID IS NULL;
+*/
+
+-- Запрос для вывода названий компаний поставщиков, находящихся в México D.F.
+SELECT CompanyName
+FROM Customers
+WHERE City = 'México D.F.';
